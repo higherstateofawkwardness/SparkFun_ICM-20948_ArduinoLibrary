@@ -174,8 +174,6 @@ void setup() {
     while (1)
       ; // Do nothing more
   }
-
-
   orientIMUSensor();
 }
 
@@ -184,9 +182,6 @@ void loop()
    int moreData = readIMUDMP();
    if (moreData >=0) //function returns -1 if no data was read.
    {
-    //double sensorUp = ;
-    //double sensorEW = ;
-   // double sensorNS = ;
 
       double accelMag = sqrt(quatx*quatx+quaty*quaty+quatz*quatz);
       
@@ -228,9 +223,6 @@ void loop()
    if(moreData == 0){
       delay(10);
    }
-
-
-   //The original calculated gravity vector is sound, to transform our values into the gravity frame, we need to rotate 90° around a vector perpendicular to the gravity vector, such that it points downwards...
 }
 
 void orientIMUSensor()
@@ -348,10 +340,6 @@ int readIMUDMP()
     }
 
 }
-
-
-
-
 
 void imuPowerOn()
 {
